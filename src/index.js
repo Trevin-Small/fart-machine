@@ -23,15 +23,15 @@ let FART = false;
 app.get('/fart-machine', (req, res) => {
 
   if (FART) {
-    res.status(200).send(1);
     FART = false;
+    res.status(200).send("1");
+  } else {
+    res.status(200).send("0");
   }
-
-  res.status(200).send(0);
 
 });
 
 app.post('/fart-machine', (req, res) => {
   FART = true;
-  res.status(200).send("OK");
+  res.sendStatus(200).send("OK");
 });
