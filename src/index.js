@@ -20,18 +20,18 @@ app.listen(PORT, () => {
 
 let FART = false;
 
-app.get('/fart-machine', (req, res) => {
+app.get('/noise-machine', (req, res) => {
 
   if (FART) {
     FART = false;
-    res.status(200).send("1");
+    res.status(200).send("noise 1");
   } else {
-    res.status(200).send("0");
+    res.status(200).send("noise 0");
   }
 
 });
 
-app.post('/fart-machine', (req, res) => {
+app.post('/noise-machine', (req, res) => {
   FART = true;
   res.sendStatus(200).send("OK");
 });
